@@ -166,6 +166,9 @@ body{font-family:Georgia,'Times New Roman',serif;background:#f0f2f8;color:var(--
   /* 2. Allow the VC Nav to smoothly scroll left & right on touchscreens */
   .vc-nav-inner { 
     overflow-x: auto; 
+    overflow-y: hidden; /* Locks the vertical axis */
+    white-space: nowrap; /* Forces items to stay in one straight line */
+    touch-action: pan-x; /* Tells the phone to ONLY allow horizontal swiping here */
     -webkit-overflow-scrolling: touch; 
   }
   /* 3. Hide the ugly horizontal scrollbar line for a clean look */
