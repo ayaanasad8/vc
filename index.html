@@ -155,11 +155,25 @@ body{font-family:Georgia,'Times New Roman',serif;background:#f0f2f8;color:var(--
 
 /* RESPONSIVE */
 @media(max-width:900px){
+  /* 1. Remove the zoom on mobile and stop the screen from wiggling */
+  html, body { zoom: 1 !important; overflow-x: hidden; }
+  
   .main-nav{display:none}
   .mob-menu-btn{display:flex}
   .hdr-search{display:none}
   .card-grid{grid-template-columns:repeat(2,1fr)}
+
+  /* 2. Allow the VC Nav to smoothly scroll left & right on touchscreens */
+  .vc-nav-inner { 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+  }
+  /* 3. Hide the ugly horizontal scrollbar line for a clean look */
+  .vc-nav-inner::-webkit-scrollbar { 
+    display: none; 
+  } 
 }
+
 @media(max-width:600px){
   .util-bar{display:none}
   .site-hdr{padding:10px 16px}
